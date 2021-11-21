@@ -10,11 +10,17 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import java.util.concurrent.TimeUnit;
+
+import static com.example.demo.enums.UserRole.ADMIN;
+import static com.example.demo.enums.UserRole.VISITOR;
 
 @Configuration
 @EnableWebSecurity
@@ -27,10 +33,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return new UserDetailsServiceImpl();
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        return new UserDetailsServiceImpl();
+//    }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
@@ -41,18 +47,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       http
              .csrf().disable()
 //       .csrf()
-//                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
+//      .          .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
 
                .authorizeRequests()
                .antMatchers("/","index","/css/*","/js/*")
-               .permitAll()
+               .permitAll().and().authorizeRequests().antMatchers("/console/**").permitAll()
 //               .antMatchers("/Estates/**").hasAnyRole(VISITOR.name(),ADMIN.name())
 //               .antMatchers(HttpMethod.POST,"/admin/Estates/**").hasAuthority(ESTATES_WRITE.getPermission())
 //               .antMatchers("/admin/Estates/**").hasRole(ADMIN.name())
                .anyRequest()
                .authenticated()
                .and()
+
                .httpBasic();
+        http.headers().frameOptions().disable();
               //.loginPage("/login").permitAll()
 //              .defaultSuccessUrl("/Estates",true)
 //              .and()
@@ -80,24 +88,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return authProvider;
     }
 
-//    @Override
-//    @Bean
-//    protected UserDetailsService userDetailsService() {
-//        UserDetails majdUser = User.builder()
-//                .username("Majd")
-//                .password( passwordEncoder.encode("Majd123"))
-//                //.roles(VISITOR.name())
-//                .authorities(VISITOR.getGrantedAuthorities())
-//                .build();
-//        UserDetails HusseinUser = User.builder()
-//                .username("Hussein")
-//                .password(passwordEncoder.encode("Hussein1234"))
-//               // .roles(ADMIN.name())
-//                .authorities(ADMIN.getGrantedAuthorities())
-//                .build();
-//        return  new InMemoryUserDetailsManager(
-//                majdUser,
-//                HusseinUser
-//        );
-//    }
+    @Override
+    @Bean
+    protected UserDetailsService userDetailsService() {
+        UserDetails majdUser = User.builder()
+                .username("Majd")
+                .password( passwordEncoder.encode("Majd123"))
+                //.roles(VISITOR.name())
+                .authorities(VISITOR.getGrantedAuthorities())
+                .build();
+        UserDetails HusseinUser = User.builder()
+                .username("Hussein")
+                .password(passwordEncoder.encode("Hussein1234"))
+               // .roles(ADMIN.name())
+                .authorities(ADMIN.getGrantedAuthorities())
+                .build();
+        return  new InMemoryUserDetailsManager(
+                majdUser,
+                HusseinUser
+        );
+    }
 }
