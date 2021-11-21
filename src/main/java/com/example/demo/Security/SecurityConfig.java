@@ -33,10 +33,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.passwordEncoder = passwordEncoder;
     }
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        return new UserDetailsServiceImpl();
-//    }
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsServiceImpl();
+    }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
@@ -52,6 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                .authorizeRequests()
                .antMatchers("/","index","/css/*","/js/*")
                .permitAll().and().authorizeRequests().antMatchers("/console/**").permitAll()
+              .and().authorizeRequests().antMatchers("/user_management/**").permitAll()
 //               .antMatchers("/Estates/**").hasAnyRole(VISITOR.name(),ADMIN.name())
 //               .antMatchers(HttpMethod.POST,"/admin/Estates/**").hasAuthority(ESTATES_WRITE.getPermission())
 //               .antMatchers("/admin/Estates/**").hasRole(ADMIN.name())
@@ -88,24 +89,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return authProvider;
     }
 
-    @Override
-    @Bean
-    protected UserDetailsService userDetailsService() {
-        UserDetails majdUser = User.builder()
-                .username("Majd")
-                .password( passwordEncoder.encode("Majd123"))
-                //.roles(VISITOR.name())
-                .authorities(VISITOR.getGrantedAuthorities())
-                .build();
-        UserDetails HusseinUser = User.builder()
-                .username("Hussein")
-                .password(passwordEncoder.encode("Hussein1234"))
-               // .roles(ADMIN.name())
-                .authorities(ADMIN.getGrantedAuthorities())
-                .build();
-        return  new InMemoryUserDetailsManager(
-                majdUser,
-                HusseinUser
-        );
-    }
+//    @Override
+//    @Bean
+//    protected UserDetailsService userDetailsService() {
+//        UserDetails majdUser = User.builder()
+//                .username("Majd")
+//                .password( passwordEncoder.encode("Majd123"))
+//                //.roles(VISITOR.name())
+//                .authorities(VISITOR.getGrantedAuthorities())
+//                .build();
+//        UserDetails HusseinUser = User.builder()
+//                .username("Hussein")
+//                .password(passwordEncoder.encode("Hussein1234"))
+//               // .roles(ADMIN.name())
+//                .authorities(ADMIN.getGrantedAuthorities())
+//                .build();
+//        return  new InMemoryUserDetailsManager(
+//                majdUser,
+//                HusseinUser
+//        );
+//    }
 }
