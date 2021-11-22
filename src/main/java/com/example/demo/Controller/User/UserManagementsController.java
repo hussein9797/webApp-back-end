@@ -27,7 +27,7 @@ public class UserManagementsController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity<>("UserName Already Exist Please Choose Another UserName  ", HttpStatus.CONFLICT);
+            return new ResponseEntity<>("massage :\"UserName Already Exist Please Choose Another UserName\"", HttpStatus.CONFLICT);
 
 
         }
