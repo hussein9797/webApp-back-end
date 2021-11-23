@@ -1,6 +1,8 @@
 package com.example.demo.RabbitMQ;
 
 import com.rabbitmq.client.impl.AMQImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -14,7 +16,7 @@ public class MessageConfig {
 public final static String  QUEUE="Estates_queue";
 public final static String  EXCHANGE="Estates_Management_Exchange";
 public final static String  ROUTING_KEY="Estates_Routing_key";
-
+    private static final Logger logger = LoggerFactory.getLogger(MessageConfig.class);
 
     @Bean
     public Queue queue(){
