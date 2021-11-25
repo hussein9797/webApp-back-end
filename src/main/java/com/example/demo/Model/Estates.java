@@ -20,9 +20,11 @@ public class Estates {
     @Column(name = "stock_price")
     private
     double stockPrice;
+
     @Column(name = "stock_count")
     private
     double stockCount;
+    @JsonIgnore
     @Column(name = "sell_date")
     private
     Date sellDate;
