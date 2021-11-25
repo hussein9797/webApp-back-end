@@ -24,7 +24,7 @@ public class AdministrationController {
     @Autowired
     RabbitTemplate template;
 
-    @PostMapping(value = "/addEstates")
+    @PostMapping(value = "/InventoryRequest")
     @PreAuthorize("hasAuthority('estates_write')")
     public ResponseEntity<Object> addEstates(@RequestBody InventoryMQRequest inventoryMQRequest) throws Exception {
         try {
