@@ -2,6 +2,7 @@ package com.example.demo.Service;
 
 import com.example.demo.Model.Estates;
 import com.example.demo.dto.request.EstatesFilterObject;
+import com.example.demo.dto.request.EstatesIdsRequst;
 import com.example.demo.dto.request.EstatesRequest;
 import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
@@ -15,5 +16,6 @@ public interface EstatesService {
     List<Estates> getAllEstates();
     void updateEstates(EstatesRequest estatesRequest) throws NotFoundException;
     List<Estates> filterEstates(EstatesFilterObject estatesFilterObject) ;
+    void BuyEstates (EstatesIdsRequst estatesIdsRequst);
 
 }

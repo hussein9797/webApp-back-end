@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.Service.EstatesService;
 import com.example.demo.dto.request.EstatesFilterObject;
+import com.example.demo.dto.request.EstatesIdsRequst;
 import com.example.demo.dto.request.EstatesRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,6 +39,21 @@ public class EstatesController {
 
 
             return new ResponseEntity<>(estatesService.filterEstates(estatesFilter), HttpStatus.OK);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(e, HttpStatus.FAILED_DEPENDENCY);
+        }
+
+
+
+    }   @PostMapping(value = "/EstatesBuy")
+    @PreAuthorize("hasAuthority('estates_write')")
+    public ResponseEntity<Object> BuyEstates(@RequestBody EstatesIdsRequst  estatesIdsRequst ) {
+        try {
+            estatesService.BuyEstates(estatesIdsRequst);
+
+            return new ResponseEntity<>("massage :\"Estates Soled Successfully\"", HttpStatus.OK);
 
         } catch (Exception e) {
             e.printStackTrace();

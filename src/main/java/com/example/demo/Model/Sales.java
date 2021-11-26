@@ -12,9 +12,9 @@ import java.util.Date;
 public class Sales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "sale_id")
     Long id;
-    @Column(name = "sell_date")
+    @Column(name = "sale_date")
     private
     Date sellDate;
     @OneToOne
@@ -25,7 +25,7 @@ public class Sales {
     @OneToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    @JoinColumn(name="id")
+    @JoinColumn(name="estate_id")
     Estates Estates;
 
     public Sales() {

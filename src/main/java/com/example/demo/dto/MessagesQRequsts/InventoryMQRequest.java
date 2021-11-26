@@ -8,7 +8,7 @@ public class InventoryMQRequest implements Serializable {
 
     String email;
     String content;
-    Date inventoryingDate;
+    Date inventorying_date;
 
     public InventoryMQRequest() {
     }
@@ -29,11 +29,11 @@ public class InventoryMQRequest implements Serializable {
         this.content = content;
     }
 
-    public Date getInventoryingDate() {
-        return inventoryingDate;
+    public Date getInventorying_date() {
+        return inventorying_date;
     }
 
-    public void setInventoryingDate(Date inventoryingDate) {
-        this.inventoryingDate = inventoryingDate;
+    public void setInventorying_date(Date inventorying_date) {
+        this.inventorying_date = inventorying_date;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.demo.Model;
 
+import com.example.demo.enums.SaleType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -12,7 +13,7 @@ import java.util.Date;
 public class Estates {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "estate_id")
     Long id;
     @Column(name = "name")
     private
@@ -40,7 +41,19 @@ public class Estates {
     private
     String investorName;
 
+    @Column(name = "sale_status", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private SaleType saleType;
+
     public Estates() {
+    }
+
+    public SaleType getSaleType() {
+        return saleType;
+    }
+
+    public void setSaleType(SaleType saleType) {
+        this.saleType = saleType;
     }
 
     public User getUser() {

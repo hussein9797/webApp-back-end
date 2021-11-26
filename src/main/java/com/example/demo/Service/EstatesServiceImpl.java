@@ -1,15 +1,20 @@
 package com.example.demo.Service;
 
 import com.example.demo.Model.Estates;
+import com.example.demo.Model.Sales;
 import com.example.demo.Model.User;
 import com.example.demo.Repository.EstatesRepository;
+import com.example.demo.Repository.SalesRepository;
 import com.example.demo.Repository.UserRepository;
 import com.example.demo.dto.request.EstatesFilterObject;
+import com.example.demo.dto.request.EstatesIdsRequst;
 import com.example.demo.dto.request.EstatesRequest;
+import com.example.demo.enums.SaleType;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 import static com.example.demo.Service.UserDetailsServiceImpl.userId;
@@ -20,6 +25,8 @@ public class EstatesServiceImpl implements EstatesService {
     EstatesRepository estatesRepository;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    SalesRepository salesRepository;
     @Autowired
     ParametersServiceImpl parametersServiceImpl;
 
@@ -39,6 +46,7 @@ public class EstatesServiceImpl implements EstatesService {
         estates.setStockPrice(estatesRequest.getStock_price());
 
         estates.setSellDate(estatesRequest.getSell_date());
+        estates.setSaleType(SaleType.ON_SALE);
 
         estates.setSellingPrice(defaultSellingPrice);
         estates.setInvestorName(estatesRequest.getInvestor_name());
@@ -107,6 +115,24 @@ public class EstatesServiceImpl implements EstatesService {
         } catch (Exception e) {
                e.getMessage();
             return null;
+
+        }
+
+    }
+
+    @Override
+    public void BuyEstates(EstatesIdsRequst estatesIdsRequst) {
+        User user = userRepository.getOne(userId);
+        List<Long> EstatesIds=estatesIdsRequst.getEstates_ids();
+        List<Estates> EstatesToBuy=estatesRepository.findAllById(EstatesIds);
+        for (Estates estate:EstatesToBuy){
+            Sales sale =new Sales();
+            sale.setEstates(estate);
+            sale.setUser(user);
+            sale.setSellDate(new Date());
+            estate.setSaleType(SaleType.SOLD);
+            estatesRepository.save(estate);
+            salesRepository.save(sale);
 
         }
 

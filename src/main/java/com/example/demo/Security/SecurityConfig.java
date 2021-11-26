@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                .authorizeRequests()
                .antMatchers("/","index","/css/*","/js/*")
-               .permitAll()
+               .permitAll().and().authorizeRequests().antMatchers("/user_management/**").permitAll()
 //               .antMatchers("/Estates/**").hasAnyRole(VISITOR.name(),ADMIN.name())
 //               .antMatchers(HttpMethod.POST,"/admin/Estates/**").hasAuthority(ESTATES_WRITE.getPermission())
 //               .antMatchers("/admin/Estates/**").hasRole(ADMIN.name())
