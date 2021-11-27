@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 
 import com.example.demo.RabbitMQ.MessageConfig;
+import com.example.demo.Service.SalesService;
 import com.example.demo.dto.MessagesQRequsts.InventoryMQRequest;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -20,23 +21,22 @@ import static com.example.demo.RabbitMQ.MessageConfig.ROUTING_KEY;
 
 @Component
 public class AdministrationController {
-
+@Autowired
+    SalesService salesService;
 
 
    @RabbitListener(queues = MessageConfig.QUEUE)
-    public ResponseEntity<Object> addEstates(@RequestBody InventoryMQRequest inventoryMQRequest) throws Exception {
+    public void addEstates(@RequestBody InventoryMQRequest inventoryMQRequest) throws Exception {
         try {
 
-      //todo get the request and do the inventorying for the estates sales
 
-
+            System.out.println(  salesService.getSaleInSpecificMonth(inventoryMQRequest.getInventorying_date()));
 
         } catch (Exception e) {
             e.printStackTrace();
 
-            return new ResponseEntity<>("massage :\"Error Bad Request\"", HttpStatus.BAD_REQUEST);
+
         }
-        return new ResponseEntity<>("massage :\"Estates Add Successfully\"", HttpStatus.OK);
 
     }
 
