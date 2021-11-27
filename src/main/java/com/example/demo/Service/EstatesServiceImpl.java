@@ -62,6 +62,10 @@ public class EstatesServiceImpl implements EstatesService {
         estates.setSellingPrice(defaultSellingPrice);
         estates.setInvestorName(estatesRequest.getInvestor_name());
         estates.setUser(user);
+        estates.setCreatedAt(new Date());
+        estates.setUpdatedAt(new Date());
+        estates.setCreatedBy(user.getUsername());
+        estates.setUpdatedBy(user.getUsername());
 
         estatesRepository.save(estates);
 
@@ -106,6 +110,8 @@ public class EstatesServiceImpl implements EstatesService {
             estates.setSellDate(estatesRequest.getSell_date());
             estates.setSellingPrice(estatesRequest.getSelling_price());
             estates.setInvestorName(estatesRequest.getInvestor_name());
+            estates.setUpdatedAt(new Date());
+            estates.setUpdatedBy(user.getUsername());
             estatesRepository.save(estates);
 
 

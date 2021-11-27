@@ -63,5 +63,5 @@ public class User {
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
     }
-// remaining getters and setters are not shown for brevity
+
 }
