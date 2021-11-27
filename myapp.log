@@ -1,0 +1,133 @@
+2021-11-27 12:06:33.148  INFO 17192 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 11.0.6 on java-11 with PID 17192 (C:\Users\hussain.61\Desktop\myfolder\target\classes started by hussain.61 in C:\Users\hussain.61\Desktop\myfolder)
+2021-11-27 12:06:33.151  INFO 17192 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2021-11-27 12:06:34.057  INFO 17192 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 12:06:34.145  INFO 17192 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 4 JPA repository interfaces.
+2021-11-27 12:06:34.475  INFO 17192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3c50ad4b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:06:34.481  INFO 17192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:06:34.769  INFO 17192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-27 12:06:34.778  INFO 17192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-27 12:06:34.779  INFO 17192 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-27 12:06:34.917  INFO 17192 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-27 12:06:34.917  INFO 17192 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1717 ms
+2021-11-27 12:06:35.125  INFO 17192 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 12:06:35.172  INFO 17192 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-27 12:06:35.289  INFO 17192 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-27 12:06:35.394  INFO 17192 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 12:06:35.980  INFO 17192 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 12:06:35.992  INFO 17192 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 12:06:36.976  WARN 17192 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 12:06:37.174  INFO 17192 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@626b9092, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a7437d8, org.springframework.security.web.header.HeaderWriterFilter@779448b8, org.springframework.security.web.authentication.logout.LogoutFilter@43cc7951, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@772bc4c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b31a9e3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54780c40, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ac2829e, org.springframework.security.web.session.SessionManagementFilter@6c6b00f1, org.springframework.security.web.access.ExceptionTranslationFilter@3c9cfcde, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c3a64b6]
+2021-11-27 12:06:37.425  INFO 17192 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-11-27 12:06:37.834  INFO 17192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-27 12:06:37.849  INFO 17192 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 5.16 seconds (JVM running for 6.077)
+2021-11-27 12:06:45.774  INFO 12060 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 11.0.6 on java-11 with PID 12060 (C:\Users\hussain.61\Desktop\myfolder\target\classes started by hussain.61 in C:\Users\hussain.61\Desktop\myfolder)
+2021-11-27 12:06:45.777  INFO 12060 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2021-11-27 12:06:46.594  INFO 12060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 12:06:46.686  INFO 12060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 4 JPA repository interfaces.
+2021-11-27 12:06:46.984  INFO 12060 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2b037cfc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:06:46.989  INFO 12060 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:06:47.252  INFO 12060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-27 12:06:47.261  INFO 12060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-27 12:06:47.261  INFO 12060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-27 12:06:47.389  INFO 12060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-27 12:06:47.389  INFO 12060 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
+2021-11-27 12:06:47.577  INFO 12060 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 12:06:47.618  INFO 12060 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-27 12:06:47.740  INFO 12060 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-27 12:06:47.837  INFO 12060 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 12:06:48.184  INFO 17192 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-27 12:06:48.185  INFO 17192 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-27 12:06:48.189  INFO 17192 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-11-27 12:06:48.435  INFO 12060 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 12:06:48.446  INFO 12060 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 12:06:49.346  WARN 12060 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 12:06:49.515  INFO 12060 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1dce481b, org.springframework.security.web.context.SecurityContextPersistenceFilter@7591cbd1, org.springframework.security.web.header.HeaderWriterFilter@3d01ea33, org.springframework.security.web.authentication.logout.LogoutFilter@16890f00, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@31a4db4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a30b0cb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f4029e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22cb8e5f, org.springframework.security.web.session.SessionManagementFilter@58b5d5fc, org.springframework.security.web.access.ExceptionTranslationFilter@729a9c3d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@402c9a60]
+2021-11-27 12:06:49.743  INFO 12060 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-11-27 12:06:50.099  WARN 12060 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-11-27 12:06:50.105  INFO 12060 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 12:06:50.109  INFO 12060 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-11-27 12:06:50.125  INFO 12060 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-11-27 12:06:50.144 ERROR 12060 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-11-27 12:07:09.928  INFO 17192 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 12:07:13.474  INFO 15424 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 11.0.6 on java-11 with PID 15424 (C:\Users\hussain.61\Desktop\myfolder\target\classes started by hussain.61 in C:\Users\hussain.61\Desktop\myfolder)
+2021-11-27 12:07:13.476  INFO 15424 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2021-11-27 12:07:14.285  INFO 15424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 12:07:14.376  INFO 15424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 4 JPA repository interfaces.
+2021-11-27 12:07:14.657  INFO 15424 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2b037cfc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:07:14.662  INFO 15424 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:07:14.913  INFO 15424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-27 12:07:14.921  INFO 15424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-27 12:07:14.922  INFO 15424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-27 12:07:15.058  INFO 15424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-27 12:07:15.059  INFO 15424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1538 ms
+2021-11-27 12:07:15.255  INFO 15424 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 12:07:15.299  INFO 15424 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-27 12:07:15.434  INFO 15424 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-27 12:07:15.533  INFO 15424 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 12:07:16.072  INFO 15424 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 12:07:16.082  INFO 15424 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 12:07:16.977  WARN 15424 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 12:07:17.143  INFO 15424 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@237aba92, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f6e6f50, org.springframework.security.web.header.HeaderWriterFilter@6ae32ff0, org.springframework.security.web.authentication.logout.LogoutFilter@117069f2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5ca8c904, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@796cf2b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3bbc47c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65b19e5c, org.springframework.security.web.session.SessionManagementFilter@58a7ca42, org.springframework.security.web.access.ExceptionTranslationFilter@5213b887, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@70f5f57d]
+2021-11-27 12:07:17.374  INFO 15424 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-11-27 12:07:17.694  INFO 15424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-27 12:07:17.708  INFO 15424 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 4.638 seconds (JVM running for 5.47)
+2021-11-27 12:07:34.248  INFO 17656 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 11.0.6 on java-11 with PID 17656 (C:\Users\hussain.61\Desktop\myfolder\target\classes started by hussain.61 in C:\Users\hussain.61\Desktop\myfolder)
+2021-11-27 12:07:34.250  INFO 17656 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2021-11-27 12:07:35.073  INFO 17656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 12:07:35.167  INFO 17656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 4 JPA repository interfaces.
+2021-11-27 12:07:35.454  INFO 17656 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@16c587de' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:07:35.459  INFO 17656 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:07:35.707  INFO 17656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-27 12:07:35.715  INFO 17656 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-27 12:07:35.715  INFO 17656 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-27 12:07:35.837  INFO 17656 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-27 12:07:35.837  INFO 17656 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1537 ms
+2021-11-27 12:07:36.041  INFO 17656 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 12:07:36.085  INFO 17656 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-27 12:07:36.192  INFO 17656 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-27 12:07:36.287  INFO 17656 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 12:07:36.816  INFO 17656 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 12:07:36.826  INFO 17656 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 12:07:37.715  WARN 17656 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 12:07:37.876  INFO 17656 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34ede267, org.springframework.security.web.context.SecurityContextPersistenceFilter@6fad5ace, org.springframework.security.web.header.HeaderWriterFilter@5a99543b, org.springframework.security.web.authentication.logout.LogoutFilter@1a914a00, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@446f3a53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35f6f105, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@578198d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6bf77ee, org.springframework.security.web.session.SessionManagementFilter@1fa58a48, org.springframework.security.web.access.ExceptionTranslationFilter@6f1163f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42f2cae8]
+2021-11-27 12:07:38.096  INFO 17656 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-11-27 12:07:38.417  INFO 17656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-27 12:07:38.432  INFO 17656 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 4.575 seconds (JVM running for 5.376)
+2021-11-27 12:17:10.643  INFO 14696 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 11.0.6 on java-11 with PID 14696 (C:\Users\hussain.61\Desktop\myfolder\target\classes started by hussain.61 in C:\Users\hussain.61\Desktop\myfolder)
+2021-11-27 12:17:10.646  INFO 14696 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2021-11-27 12:17:11.552  INFO 14696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 12:17:11.633  INFO 14696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 4 JPA repository interfaces.
+2021-11-27 12:17:11.944  INFO 14696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2ab26378' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:17:11.949  INFO 14696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-27 12:17:12.222  INFO 14696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-27 12:17:12.230  INFO 14696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-27 12:17:12.231  INFO 14696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-27 12:17:12.363  INFO 14696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-27 12:17:12.364  INFO 14696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1660 ms
+2021-11-27 12:17:12.572  INFO 14696 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 12:17:12.622  INFO 14696 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-27 12:17:12.745  INFO 14696 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-27 12:17:12.873  INFO 14696 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 12:17:13.478  INFO 14696 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 12:17:13.489  INFO 14696 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 12:17:14.457  WARN 14696 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 12:17:14.634  INFO 14696 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@281963c, org.springframework.security.web.context.SecurityContextPersistenceFilter@210e2f2f, org.springframework.security.web.header.HeaderWriterFilter@644f6e89, org.springframework.security.web.authentication.logout.LogoutFilter@55e88bc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@22d47f09, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43dddfdd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20a116a0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a2815cc, org.springframework.security.web.session.SessionManagementFilter@4840ec68, org.springframework.security.web.access.ExceptionTranslationFilter@2aac87ab, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1791396b]
+2021-11-27 12:17:14.876  INFO 14696 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-11-27 12:17:15.281  INFO 14696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-27 12:17:15.296  INFO 14696 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 5.12 seconds (JVM running for 6.071)
+2021-11-27 12:17:18.901  INFO 14696 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

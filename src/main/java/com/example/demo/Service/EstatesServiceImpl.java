@@ -12,6 +12,8 @@ import com.example.demo.dto.request.EstatesIdsRequst;
 import com.example.demo.dto.request.EstatesRequest;
 import com.example.demo.enums.SaleType;
 import javassist.NotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -24,6 +26,7 @@ import static com.example.demo.Service.UserDetailsServiceImpl.userId;
 
 @Service
 public class EstatesServiceImpl implements EstatesService {
+    private static final Logger logger = LoggerFactory.getLogger(EstatesServiceImpl.class);
     @Autowired
     EstatesRepository estatesRepository;
     @Autowired
@@ -37,6 +40,11 @@ public class EstatesServiceImpl implements EstatesService {
     public void AddEstates(EstatesRequest estatesRequest, Long userId) {
         User user = userRepository.getOne(userId);
         Estates estates = new Estates();
+
+        logger.info("User  "+user.getUsername()+"  adding new EState");
+
+
+
         double defaultSellingPrice=(estatesRequest.getStock_price())*(parametersServiceImpl.getValueByKey("default_percentage_profit"));
         estates.setName(estatesRequest.getName());
         if (estatesRequest.getStock_count() == null) {
@@ -61,16 +69,22 @@ public class EstatesServiceImpl implements EstatesService {
 
     @Override
     public void deleteEstates(Long EstatesId) throws NotFoundException {
+        User user = userRepository.getOne(userId);
+
 
         estatesRepository.deleteById(EstatesId);
+        logger.info("User  "+user.getUsername()+"  deleted a Estates");
 
 
     }
 
     public List<Estates> getAllEstates() {
         try {
+            User user = userRepository.getOne(userId);
+            logger.info("User  "+user.getUsername()+"  Shows its Estates");
 
             return estatesRepository.findAllByUserId(userId);
+
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -82,14 +96,18 @@ public class EstatesServiceImpl implements EstatesService {
     @Override
     public void updateEstates(EstatesRequest estatesRequest) throws NotFoundException {
         try {
+            User user = userRepository.getOne(userId);
             Estates estates = estatesRepository.getById(estatesRequest.getId());
             estates.setName(estatesRequest.getName());
+            logger.info("User  "+user.getUsername()+"  updated  Estates  " +estates.getName()+"information" );
+
             estates.setStockPrice(estatesRequest.getStock_price());
             estates.setStockCount(estatesRequest.getStock_count());
             estates.setSellDate(estatesRequest.getSell_date());
             estates.setSellingPrice(estatesRequest.getSelling_price());
             estates.setInvestorName(estatesRequest.getInvestor_name());
             estatesRepository.save(estates);
+
 
 
         } catch (Exception e) {
