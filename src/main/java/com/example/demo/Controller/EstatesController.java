@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/Estates")
+@EnableTransactionManagement
 public class EstatesController {
 
     @Autowired
@@ -57,7 +59,7 @@ public class EstatesController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity<>(e, HttpStatus.FAILED_DEPENDENCY);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.GONE);
         }
 
 

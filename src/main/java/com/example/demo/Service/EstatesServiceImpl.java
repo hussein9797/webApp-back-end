@@ -6,6 +6,7 @@ import com.example.demo.Model.User;
 import com.example.demo.Repository.EstatesRepository;
 import com.example.demo.Repository.SalesRepository;
 import com.example.demo.Repository.UserRepository;
+import com.example.demo.ScenariosManagement.BuyingUtil;
 import com.example.demo.dto.request.EstatesFilterObject;
 import com.example.demo.dto.request.EstatesIdsRequst;
 import com.example.demo.dto.request.EstatesRequest;
@@ -13,6 +14,8 @@ import com.example.demo.enums.SaleType;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -121,17 +124,27 @@ public class EstatesServiceImpl implements EstatesService {
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void BuyEstates(EstatesIdsRequst estatesIdsRequst) {
+
+
+
         User user = userRepository.getOne(userId);
         List<Long> EstatesIds=estatesIdsRequst.getEstates_ids();
         List<Estates> EstatesToBuy=estatesRepository.findAllById(EstatesIds);
         for (Estates estate:EstatesToBuy){
             Sales sale =new Sales();
+
             sale.setEstates(estate);
             sale.setUser(user);
             sale.setSellDate(new Date());
-            estate.setSaleType(SaleType.SOLD);
+            BuyingUtil.ValidateBuyingProcess(estate.getSaleType());
+            estate.setSaleType(SaleType.PENDING);
             estatesRepository.save(estate);
+
+
+
+
             salesRepository.save(sale);
 
         }

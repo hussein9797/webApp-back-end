@@ -12,6 +12,7 @@ public interface EstatesRepository extends JpaRepository<Estates,Long> {
 
     List<Estates> findAllByUserId( long userId);
     List<Estates> findAllByName(String name);
+    Estates findByName(String name);
     List<Estates> findAllByStockCountLessThanEqual(double stockCount);
     List<Estates> findAllByStockPriceLessThanEqual(double stockPrice);
 

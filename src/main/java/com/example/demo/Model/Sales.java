@@ -27,6 +27,8 @@ public class Sales {
     @JsonIgnore
     @JoinColumn(name="estate_id")
     Estates Estates;
+    @Version
+    private Long version;
 
     public Sales() {
     }
