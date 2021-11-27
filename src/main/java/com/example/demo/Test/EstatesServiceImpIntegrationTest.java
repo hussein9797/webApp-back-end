@@ -99,6 +99,21 @@ public void TestDeleteEstates() throws Exception {
           // mockMvc.perform(MockMvcRequestBuilders.delete("/admin/Estates/deleteEstates", 1)).andExpect(status().isOk());
     }
 
+//    @Test
+//    public void whenValidNameAfterUpdate_thenEstateShouldBeFound() {
+//        String name = "Dummar";
+//
+//        Estates estates=  estatesRepository.getById(1L);
+//        estates.setName(name);
+//        estatesRepository.save(estates);
+//        Estates found = estatesRepository.findByName(name);
+//
+//        assertThat(found.getName())
+//                .isEqualTo(name);
+//
+//    }
+
+
 
 
 
