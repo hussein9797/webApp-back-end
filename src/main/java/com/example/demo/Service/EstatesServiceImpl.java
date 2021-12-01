@@ -1,5 +1,6 @@
 package com.example.demo.Service;
 
+import com.example.demo.Excptions.AnotherProcessOfBuyingIsInUse;
 import com.example.demo.Model.Estates;
 import com.example.demo.Model.Sales;
 import com.example.demo.Model.User;
@@ -41,11 +42,10 @@ public class EstatesServiceImpl implements EstatesService {
         User user = userRepository.getOne(userId);
         Estates estates = new Estates();
 
-        logger.info("User  "+user.getUsername()+"  adding new EState");
+        logger.info("User  " + user.getUsername() + "  adding new EState");
 
 
-
-        double defaultSellingPrice=(estatesRequest.getStock_price())*(parametersServiceImpl.getValueByKey("default_percentage_profit"));
+        double defaultSellingPrice = (estatesRequest.getStock_price()) * (parametersServiceImpl.getValueByKey("default_percentage_profit"));
         estates.setName(estatesRequest.getName());
         if (estatesRequest.getStock_count() == null) {
             estates.setStockCount(parametersServiceImpl.getValueByKey("default_stock_count"));
@@ -77,7 +77,7 @@ public class EstatesServiceImpl implements EstatesService {
 
 
         estatesRepository.deleteById(EstatesId);
-        logger.info("User  "+user.getUsername()+"  deleted a Estates");
+        logger.info("User  " + user.getUsername() + "  deleted a Estates");
 
 
     }
@@ -85,7 +85,7 @@ public class EstatesServiceImpl implements EstatesService {
     public List<Estates> getAllEstates() {
         try {
             User user = userRepository.getOne(userId);
-            logger.info("User  "+user.getUsername()+"  Shows its Estates");
+            logger.info("User  " + user.getUsername() + "  Shows its Estates");
 
             return estatesRepository.findAllByUserId(userId);
 
@@ -103,7 +103,7 @@ public class EstatesServiceImpl implements EstatesService {
             User user = userRepository.getOne(userId);
             Estates estates = estatesRepository.getById(estatesRequest.getId());
             estates.setName(estatesRequest.getName());
-            logger.info("User  "+user.getUsername()+"  updated  Estates  " +estates.getName()+"information" );
+            logger.info("User  " + user.getUsername() + "  updated  Estates  " + estates.getName() + "information");
 
             estates.setStockPrice(estatesRequest.getStock_price());
             estates.setStockCount(estatesRequest.getStock_count());
@@ -115,7 +115,6 @@ public class EstatesServiceImpl implements EstatesService {
             estatesRepository.save(estates);
 
 
-
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -125,22 +124,22 @@ public class EstatesServiceImpl implements EstatesService {
     }
 
     @Override
-    public List<Estates> filterEstates(EstatesFilterObject estatesFilterObject)  {
+    public List<Estates> filterEstates(EstatesFilterObject estatesFilterObject) {
         try {
 
             List<Estates> result;
             if (!estatesFilterObject.getEstate_name().isEmpty() || !estatesFilterObject.getEstate_name().isBlank())
                 result = estatesRepository.findAllByName(estatesFilterObject.getEstate_name());
-            else if (  estatesFilterObject.getPrice() != null  )
+            else if (estatesFilterObject.getPrice() != null)
                 result = estatesRepository.findAllByStockPriceLessThanEqual(estatesFilterObject.getPrice());
-            else if (  estatesFilterObject.getStock_count() != null)
+            else if (estatesFilterObject.getStock_count() != null)
                 result = estatesRepository.findAllByStockCountLessThanEqual(estatesFilterObject.getStock_count());
             else
                 result = estatesRepository.findAll();
 
             return result;
         } catch (Exception e) {
-               e.getMessage();
+            e.getMessage();
             return null;
 
         }
@@ -149,28 +148,41 @@ public class EstatesServiceImpl implements EstatesService {
 
     @Override
     @Transactional(readOnly = false)
-    public void BuyEstates(EstatesIdsRequst estatesIdsRequst) {
+    public void BuyEstates(EstatesIdsRequst estatesIdsRequst) throws NotFoundException {
+
+        try {
+
+            User user = userRepository.getOne(userId);
+            List<Long> EstatesIds = estatesIdsRequst.getEstates_ids();
 
 
 
-        User user = userRepository.getOne(userId);
-        List<Long> EstatesIds=estatesIdsRequst.getEstates_ids();
-        List<Estates> EstatesToBuy=estatesRepository.findAllById(EstatesIds);
-        for (Estates estate:EstatesToBuy){
-            Sales sale =new Sales();
+                List<Estates> EstatesToBuy = estatesRepository.findAllById(EstatesIds);
 
-            sale.setEstates(estate);
-            sale.setUser(user);
-            sale.setSellDate(new Date());
-            BuyingUtil.ValidateBuyingProcess(estate.getSaleType());
-            estate.setSaleType(SaleType.PENDING);
-            estatesRepository.save(estate);
+                if (EstatesToBuy.isEmpty())
+                    throw new NotFoundException("not found some estates are missing ");
+
+            for (Estates estate : EstatesToBuy) {
+                Sales sale = new Sales();
+
+                sale.setEstates(estate);
+                sale.setUser(user);
+                sale.setSellDate(new Date());
+                try {
+                    BuyingUtil.ValidateBuyingProcess(estate.getSaleType());
+
+                } catch (Exception e) {
+                    throw e;
+                }
+                estate.setSaleType(SaleType.PENDING);
+                estatesRepository.save(estate);
 
 
+                salesRepository.save(sale);
 
-
-            salesRepository.save(sale);
-
+            }
+        } catch (Exception e) {
+            throw e;
         }
 
     }

@@ -18,6 +18,6 @@ public interface EstatesService {
     void updateEstates(EstatesRequest estatesRequest) throws NotFoundException;
     List<Estates> filterEstates(EstatesFilterObject estatesFilterObject) ;
     @Transactional
-    void BuyEstates (EstatesIdsRequst estatesIdsRequst);
+    void BuyEstates (EstatesIdsRequst estatesIdsRequst) throws NotFoundException;
 
 }

@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Excptions.AnotherProcessOfBuyingIsInUse;
 import com.example.demo.Service.EstatesService;
 import com.example.demo.dto.request.EstatesFilterObject;
 import com.example.demo.dto.request.EstatesIdsRequst;
@@ -51,7 +52,7 @@ public class EstatesController {
 
     }   @PostMapping(value = "/EstatesBuy")
     @PreAuthorize("hasAuthority('estates_write')")
-    public ResponseEntity<Object> BuyEstates(@RequestBody EstatesIdsRequst  estatesIdsRequst ) {
+    public ResponseEntity<Object> BuyEstates(@RequestBody EstatesIdsRequst  estatesIdsRequst ) throws AnotherProcessOfBuyingIsInUse {
         try {
             estatesService.BuyEstates(estatesIdsRequst);
 
@@ -59,7 +60,8 @@ public class EstatesController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.GONE);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.FAILED_DEPENDENCY);
+
         }
 
 
