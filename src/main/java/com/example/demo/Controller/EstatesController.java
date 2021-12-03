@@ -31,7 +31,7 @@ public class EstatesController {
 
             } catch (Exception e) {
                 e.printStackTrace();
-                throw new Exception(e.getCause());
+                throw new Exception(e.getMessage());
             }
 
     }
