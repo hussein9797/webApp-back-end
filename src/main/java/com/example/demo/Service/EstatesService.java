@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface EstatesService {
     void AddEstates(EstatesRequest estatesRequest,Long userId);
-    void deleteEstates(Long EstatesId) throws NotFoundException;
+      void deleteEstates(Long EstatesId) throws NotFoundException;
     List<Estates> getAllEstates();
     void updateEstates(EstatesRequest estatesRequest) throws NotFoundException;
     List<Estates> filterEstates(EstatesFilterObject estatesFilterObject) ;
